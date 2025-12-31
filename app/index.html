@@ -356,7 +356,10 @@
   <script src="../core.js"></script>
   <script>
     // Update current role display
-    document.getElementById('current-role').textContent = ChatGPTKing.getUserRole().toUpperCase();
+    const roleElement = document.getElementById('current-role');
+    if (roleElement) {
+      roleElement.textContent = ChatGPTKing.getUserRole().toUpperCase();
+    }
   </script>
 </body>
 </html>

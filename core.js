@@ -50,10 +50,12 @@
     return element ? element.classList.contains(className) : false;
   }
 
+  // === Constants ===
+  const VALID_ROLES = ['guest', 'member', 'pro', 'admin'];
+
   // === Role Management ===
   function setUserRole(role) {
-    const validRoles = ['guest', 'member', 'pro', 'admin'];
-    if (validRoles.includes(role)) {
+    if (VALID_ROLES.includes(role)) {
       state.userRole = role;
       localStorage.setItem('userRole', role);
       document.body.setAttribute('data-user-role', role);
