@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CHATGPT KING - Application">
+  <title>CHATGPT KING - App</title>
+  <link rel="stylesheet" href="../core.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="/" class="header__logo">
+      <div class="header__logo-icon">CK</div>
+      <span>CHATGPT KING</span>
+    </a>
+
+    <!-- Desktop Navigation (hidden on mobile) -->
+    <nav class="header__nav">
+      <a href="/" class="header__nav-link">Home</a>
+      <a href="/app/" class="header__nav-link active">App</a>
+      <span class="role-member-inline">
+        <a href="/dashboard/" class="header__nav-link">Dashboard</a>
+      </span>
+      <span class="role-pro-inline">
+        <a href="/analytics/" class="header__nav-link">Analytics</a>
+      </span>
+      <span class="role-admin-inline">
+        <a href="/admin/" class="header__nav-link">Admin</a>
+      </span>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="header__menu-toggle" aria-label="Toggle menu">
+      <span class="header__menu-toggle-line"></span>
+      <span class="header__menu-toggle-line"></span>
+      <span class="header__menu-toggle-line"></span>
+    </button>
+  </header>
+
+  <!-- Off-Canvas Drawer (mobile navigation) -->
+  <aside class="drawer">
+    <ul class="drawer__menu">
+      <li class="drawer__menu-item">
+        <a href="/" class="drawer__menu-link">
+          <span class="drawer__menu-icon">🏠</span>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="drawer__menu-item">
+        <a href="/app/" class="drawer__menu-link active">
+          <span class="drawer__menu-icon">🚀</span>
+          <span>App</span>
+        </a>
+      </li>
+      <li class="drawer__menu-item role-member">
+        <a href="/dashboard/" class="drawer__menu-link">
+          <span class="drawer__menu-icon">📊</span>
+          <span>Dashboard</span>
+          <span class="drawer__role-badge drawer__role-badge--member">MEMBER</span>
+        </a>
+      </li>
+      <li class="drawer__menu-item role-pro">
+        <a href="/analytics/" class="drawer__menu-link">
+          <span class="drawer__menu-icon">📈</span>
+          <span>Analytics</span>
+          <span class="drawer__role-badge drawer__role-badge--pro">PRO</span>
+        </a>
+      </li>
+      <li class="drawer__menu-item role-admin">
+        <a href="/admin/" class="drawer__menu-link">
+          <span class="drawer__menu-icon">⚙️</span>
+          <span>Admin Panel</span>
+          <span class="drawer__role-badge drawer__role-badge--admin">ADMIN</span>
+        </a>
+      </li>
+      <li class="drawer__menu-item">
+        <a href="#features" class="drawer__menu-link">
+          <span class="drawer__menu-icon">✨</span>
+          <span>Features</span>
+        </a>
+      </li>
+      <li class="drawer__menu-item">
+        <a href="#tools" class="drawer__menu-link">
+          <span class="drawer__menu-icon">🛠️</span>
+          <span>Tools</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer__overlay"></div>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h1 class="page-title">Application Center</h1>
+    <p class="page-subtitle">Access powerful tools and features to enhance your workflow</p>
+
+    <!-- Current Context Info -->
+    <section class="section">
+      <div class="card">
+        <h3 class="card__title">Current Context</h3>
+        <div class="card__content">
+          <p><strong>Domain:</strong> App Subdomain</p>
+          <p><strong>User Role:</strong> <span id="current-role"></span></p>
+          <p><strong>Description:</strong> This is the application subdomain where main features and tools are located.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Navigation Back -->
+    <section class="section">
+      <h2 class="section__title">Navigation</h2>
+      <div class="card">
+        <h3 class="card__title">🏠 Return to Home</h3>
+        <div class="card__content">
+          <p>Go back to the main website and explore other subdomains.</p>
+          <a href="/" class="btn btn--primary mt-1">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Features Grid -->
+    <section class="section" id="features">
+      <h2 class="section__title">Available Features</h2>
+      <p class="section__description">Explore the tools and features available in the app:</p>
+
+      <div class="grid grid--2 grid--3">
+        <div class="card">
+          <h3 class="card__title">💬 Chat Interface</h3>
+          <div class="card__content">
+            <p>Interact with AI-powered chat functionality.</p>
+            <button class="btn btn--outline mt-1">Launch Chat</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">📝 Document Editor</h3>
+          <div class="card__content">
+            <p>Create and edit documents with AI assistance.</p>
+            <button class="btn btn--outline mt-1">Open Editor</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">🎨 Image Generator</h3>
+          <div class="card__content">
+            <p>Generate images from text descriptions.</p>
+            <button class="btn btn--outline mt-1">Generate Image</button>
+          </div>
+        </div>
+
+        <div class="card role-member">
+          <h3 class="card__title">💾 Cloud Storage</h3>
+          <div class="card__content">
+            <p>Save and manage your files in the cloud.</p>
+            <button class="btn btn--outline mt-1">Open Storage</button>
+          </div>
+        </div>
+
+        <div class="card role-pro">
+          <h3 class="card__title">🤖 Advanced AI</h3>
+          <div class="card__content">
+            <p>Access premium AI models and features.</p>
+            <button class="btn btn--outline mt-1">Explore AI</button>
+          </div>
+        </div>
+
+        <div class="card role-admin">
+          <h3 class="card__title">🔧 API Access</h3>
+          <div class="card__content">
+            <p>Manage API keys and integrations.</p>
+            <button class="btn btn--outline mt-1">API Settings</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Accordion -->
+    <section class="section" id="tools">
+      <h2 class="section__title">Developer Tools</h2>
+      <p class="section__description">Advanced tools for developers and power users:</p>
+
+      <div class="accordion">
+        <div class="accordion__item">
+          <button class="accordion__header">
+            <span>Code Assistant</span>
+            <span class="accordion__icon">▼</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              Get intelligent code suggestions, debug assistance, and explanations for complex 
+              programming concepts. Supports multiple programming languages including Python, 
+              JavaScript, Java, C++, and more. Features include syntax highlighting, code completion, 
+              and refactoring suggestions.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__header">
+            <span>API Playground</span>
+            <span class="accordion__icon">▼</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              Test and explore our API endpoints in an interactive environment. View request/response 
+              examples, test different parameters, and generate code snippets for your preferred 
+              programming language. Includes authentication testing and rate limit monitoring.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion__item role-member">
+          <button class="accordion__header">
+            <span>Workflow Automation</span>
+            <span class="accordion__icon">▼</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              Create custom workflows to automate repetitive tasks. Chain multiple AI operations 
+              together, set up triggers and conditions, and integrate with external services. 
+              Save time by automating content generation, data processing, and more.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion__item role-pro">
+          <button class="accordion__header">
+            <span>Batch Processing</span>
+            <span class="accordion__icon">▼</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              Process multiple items simultaneously with our batch processing tools. Upload CSV 
+              files, define processing rules, and let the system handle large-scale operations. 
+              Perfect for bulk content generation, data transformation, and mass customization tasks.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion__item role-admin">
+          <button class="accordion__header">
+            <span>System Monitoring</span>
+            <span class="accordion__icon">▼</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              Monitor system performance, track API usage, and view detailed logs. Set up alerts 
+              for unusual activity, manage resource allocation, and optimize performance. Includes 
+              real-time dashboards, historical data analysis, and export capabilities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Stats -->
+    <section class="section">
+      <h2 class="section__title">Your Activity</h2>
+      
+      <div class="role-guest">
+        <div class="card">
+          <h3 class="card__title">Sign in to Track Activity</h3>
+          <div class="card__content">
+            <p>Create an account to track your usage, save preferences, and access personalized features.</p>
+            <button class="btn btn--primary mt-1">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-member">
+        <div class="grid grid--3">
+          <div class="card">
+            <h3 class="card__title">Requests Today</h3>
+            <div class="card__content">
+              <p style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">47</p>
+              <p>of 100 daily limit</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Storage Used</h3>
+            <div class="card__content">
+              <p style="font-size: 2rem; font-weight: bold; color: var(--success-color);">2.3 GB</p>
+              <p>of 10 GB available</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Active Projects</h3>
+            <div class="card__content">
+              <p style="font-size: 2rem; font-weight: bold; color: var(--secondary-color);">5</p>
+              <p>projects in progress</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-pro">
+        <div class="grid grid--4">
+          <div class="card">
+            <h3 class="card__title">Requests Today</h3>
+            <div class="card__content">
+              <p style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">284</p>
+              <p>of 1000 daily limit</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Storage Used</h3>
+            <div class="card__content">
+              <p style="font-size: 2rem; font-weight: bold; color: var(--success-color);">47 GB</p>
+              <p>of 100 GB available</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Active Projects</h3>
+            <div class="card__content">
+              <p style="font-size: 2rem; font-weight: bold; color: var(--secondary-color);">12</p>
+              <p>projects in progress</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card__title">API Calls</h3>
+            <div class="card__content">
+              <p style="font-size: 2rem; font-weight: bold; color: var(--warning-color);">1.2K</p>
+              <p>this month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-admin">
+        <div class="card">
+          <h3 class="card__title">Administrator Dashboard</h3>
+          <div class="card__content">
+            <p>You have unlimited access to all features and system resources.</p>
+            <a href="/admin/" class="btn btn--primary mt-1">Go to Admin Panel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Role Switcher (for demo purposes) -->
+  <div class="role-switcher">
+    <div class="role-switcher__title">Switch Role (Demo)</div>
+    <div class="role-switcher__buttons">
+      <button class="role-switcher__btn" data-role="guest">Guest</button>
+      <button class="role-switcher__btn" data-role="member">Member</button>
+      <button class="role-switcher__btn" data-role="pro">Pro</button>
+      <button class="role-switcher__btn" data-role="admin">Admin</button>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="../core.js"></script>
+  <script>
+    // Update current role display
+    const roleElement = document.getElementById('current-role');
+    if (roleElement) {
+      roleElement.textContent = ChatGPTKing.getUserRole().toUpperCase();
+    }
+  </script>
+</body>
+</html>
